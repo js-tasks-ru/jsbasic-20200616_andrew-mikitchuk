@@ -48,7 +48,7 @@ export default class Carousel {
 
 
     // //switching slides
-    const slideOffsetWidth = 500;
+    const slideOffsetWidth = 500; //should be 988
     
     let currentSlide = 1;
     const maxNumberOfSlides = this.slidesCouner;
