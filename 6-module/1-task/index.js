@@ -30,8 +30,7 @@
  */
 export default class UserTable {
   constructor(rows) {
-  
-    const body = document.body;
+
     this.table = document.createElement('table');
     this.thead = document.createElement('thead');
     this.tbody = document.createElement('tbody');
@@ -107,6 +106,6 @@ export default class UserTable {
     }
     this.table.appendChild(this.thead);
     this.table.appendChild(this.tbody);
-    body.appendChild(this.table)
+    this.elem = this.table;
   }
 }
