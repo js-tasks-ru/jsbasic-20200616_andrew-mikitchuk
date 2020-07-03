@@ -14,8 +14,6 @@ export default class StepSlider {
 
       document.querySelector('.slider__value').textContent = value;
 
-      console.log(document.querySelector('.slider__steps').children);
-
       let valuePercents = value / segments * 100;
       
       document.querySelector('.slider__progress').style.width = valuePercents + '%';
