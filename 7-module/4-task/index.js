@@ -95,13 +95,13 @@ export default class StepSlider {
 
         thumb.onpointerup = (event) => {
           let customEvent = new CustomEvent('slider-change', { // имя события должно быть именно 'slider-change'
-          detail: value, // значение 0, 1, 2, 3, 4
-          bubbles: true // событие всплывает - это понадобится в дальнейшем
-        });
-  
-         this.elem.dispatchEvent(customEvent);
+            detail: value, // значение 0, 1, 2, 3, 4
+            bubbles: true // событие всплывает - это понадобится в дальнейшем
+          });
 
-         this.elem.classList.remove('slider_dragging');
+          this.elem.dispatchEvent(customEvent);
+
+          this.elem.classList.remove('slider_dragging');
         }
 
 
