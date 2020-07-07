@@ -39,15 +39,19 @@ export default class CartIcon {
   }
 
   updatePosition() {
-    let initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
- 
-    if (window.pageYOffset > initialTopCoord) {
+    if (!this.elem.offsetHeight) { return; }
+
+    if (!this.initialTopCoord) {
+      this.initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
+    }
+
+    if (window.pageYOffset > this.initialTopCoord) {
       let leftIndent = Math.min(
         document.querySelector('.container').getBoundingClientRect().right + 20,
         document.documentElement.clientWidth - this.elem.offsetWidth - 10
-      ) + 'px';
-  
-      
+      );
+
+
       Object.assign(this.elem.style, {
         position: 'fixed',
         top: '50px',
@@ -63,9 +67,7 @@ export default class CartIcon {
         zIndex: ''
       });
     }
-
     let isMobile = document.documentElement.clientWidth <= 767;
-
     // Если условие выполняется, обнуляем стили к исходным
     if (isMobile) {
       Object.assign(this.elem.style, {
@@ -76,4 +78,8 @@ export default class CartIcon {
       });
     }
   }
+
 }
+
+
+
