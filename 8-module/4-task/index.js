@@ -160,11 +160,8 @@ export default class Cart {
       let productPrice = modalBody.querySelector(`[data-product-id="${productId}"] .cart-product__price`);
       let infoPrice = modalBody.querySelector('.cart-buttons__info-price');
 
-
-
       let count = this.cartItems[this.cartItems.indexOf(product) +1];
 
-  
       productCount.innerHTML = count;
       productPrice.innerHTML = `€${(product.price * count).toFixed(2)}`;
       infoPrice.innerHTML = `€${this.getTotalPrice().toFixed(2)}`;
